@@ -1,0 +1,13 @@
+CompileFlags:
+  Add:
+    - --target=wasm32-unknown-emscripten
+    - --sysroot=$EMSDK/upstream/emscripten/cache/sysroot
+    - -isystem$EMSDK/upstream/emscripten/cache/sysroot/include/c++/v1
+    - -isystem$EMSDK/upstream/emscripten/cache/sysroot/include
+    - -isystem$EMSDK/upstream/emscripten/cache/sysroot/include/compat
+    - -I$EMSDK/upstream/emscripten/cache/ports/emdawnwebgpu/emdawnwebgpu_pkg/webgpu_cpp/include/
+    - -I$EMSDK/upstream/emscripten/cache/ports/emdawnwebgpu/emdawnwebgpu_pkg/webgpu/include/
+    - -I$EMSDK/upstream/emscripten/cache/ports/contrib.glfw3/include/
+  Remove:
+    - --use-port=contrib.glfw3
+    - --use-port=emdawnwebgpu
