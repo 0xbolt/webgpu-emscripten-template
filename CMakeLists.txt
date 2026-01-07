@@ -13,7 +13,9 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(main main.cpp webgpu_glfw.cpp)
-set_target_properties(main PROPERTIES SUFFIX ".html")
+set_target_properties(main PROPERTIES
+    OUTPUT_NAME index
+    SUFFIX ".html")
 target_compile_options(main PRIVATE
     --use-port=contrib.glfw3
     --use-port=emdawnwebgpu)
