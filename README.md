@@ -1,10 +1,13 @@
 # webgpu-emscripten-template
-A minimal WebGPU emscripten template.
+A minimal WebGPU + GLFW emscripten template.
+
+![Screenshot](screenshot.png)
+
+> Should you have never used WebGPU before, this template is probably not the quickest way to get the ball going; I personally recommend starting with [webgpufundamentals](https://webgpufundamentals.org) (official JS tutorials) and/or [LearnWebGPU](https://eliemichel.github.io/LearnWebGPU/) (C++ tutorials).
 
 ## Requirements
 - [emsdk](https://github.com/emscripten-core/emsdk)
 - clang
-- [WebAssembly DWARF Debugging VSCode Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.wasm-dwarf-debugging)
 - ninja
 
 This template was tested on MacOS only, although it should work fine on Linux. I don't think it works on Windows.
@@ -25,11 +28,14 @@ You may then serve the `./build` folder and open `./build/main.html` file in the
 
 ## Intellisense
 If you use clangd, a `dotclangd_gen.py` script is provided that can create an adequate `.clangd` configuration file.
+```
+python3 ./dotclangd_gen.py
+```
 
-## Debug
+## Debugging
 An appropriate [VSCode launch configuration](.vscode/launch.json) is provided for debugging. Please note that:
 - It is necessary to serve the build folder before starting debugging, for which you may run the provided ["serve" task](.vscode/tasks.json).
-- The [WebAssembly DWARF Debugging VSCode Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.wasm-dwarf-debugging) should be installed so that the inlined WASM debug symbols may be properly recognized.
+- **The [WebAssembly DWARF Debugging VSCode Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.wasm-dwarf-debugging) should be installed so that the inlined WASM debug symbols may be properly recognized.**
 
 ## References
 - [emscripten-glfw](https://github.com/pongasoft/emscripten-glfw)
